@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+        <script language="javascript">
+
+        let num = new Number(10);
+        document.write("Number: " + num.valueOf() + "<br>");
+
+        let str = new String("Hello");
+        document.write("String: " + str.toUpperCase() + "<br>");
+
+        let bool = new Boolean(false);
+        document.write("Boolean: " + bool.valueOf() + "<br>");
+
+        let arr = new Array(1, 2, 3);
+        document.write("Array Length: " + arr.length + "<br>");
+
+        let obj = new Object({ name: "Alice", age: 25 });
+        document.write("Object Name: " + obj.name + "<br>");
+
+        let func = new Function("a", "b", "return a + b;");
+        document.write("Function Output: " + func(5, 3) + "<br>");
+        
+        let date = new Date();
+        document.write("Date: " + date.toDateString() + "<br>");
+        
+        document.write("Square Root of 25: " + Math.sqrt(25) + "<br>");
+        document.write("pi value: " + Math.PI + "<br>");
+        
+        let regex = new RegExp("hello", "i");
+        document.write("RegExp Test: " + regex.test("Hello World") + "<br>");
+        
+        let set = new Set([1, 2, 3, 3]);
+        document.write("Set Size: " + set.size + "<br>");
+        
+        let map = new Map();
+        map.set("name", "Alice");
+        document.write("Map Value: " + map.get("name") + "<br>");
+        
+        let sym = Symbol("id");
+        document.write("Symbol: " + sym.toString() + "<br>");
+
+        let bigInt = BigInt("5000");
+        document.write("BigInt: " + (bigInt - 2n) + "<br>");
+        
+        </script>
+    </head>
+</html>

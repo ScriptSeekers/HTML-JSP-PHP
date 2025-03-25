@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Form Validation</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           text-align: center;
+           margin: 50px;
+           background-color: #333;
+       }
+       form {
+           margin: auto;
+           width: 300px;
+           padding: 20px;
+           border: 1px solid white;
+           background: #444444;
+       }
+       input, button {
+           width: 90%;
+           padding: 8px;
+           margin: 10px 0;
+       }
+       .error { color: red; font-size: 14px; }
+   </style>
+   <script>
+    function validateForm() {
+        let valid = true;
+        document.querySelectorAll(".error").forEach(e => e.innerHTML = "");
+        if (!document.getElementById("name").value.trim()) {
+            document.getElementById("nameError").innerHTML = "Required"; valid = false;
+        }
+        if (!document.getElementById("email").value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            document.getElementById("emailError").innerHTML = "Invalid email"; valid = false;
+        }
+        if (document.getElementById("password").value.length < 6) {
+            document.getElementById("passwordError").innerHTML = "Min 6 chars"; valid = false;
+        }
+        if (!document.getElementById("phone").value.match(/^\d{10}$/)) {
+            document.getElementById("phoneError").innerHTML = "Invalid phone"; valid = false;
+        }
+          if (valid) {
+            alert("Form submitted successfully");
+        }
+        return valid;
+    }
+</script>
+</head>
+<body>
+   <h2 style="color:whitesmoke">Registration Form</h2>
+   <form onsubmit="return validateForm()">
+       <input type="text" id="name" placeholder="Name">
+       <div class="error" id="nameError"></div>
+       <input type="email" id="email" placeholder="Email">
+       <div class="error" id="emailError"></div>
+       <input type="password" id="password" placeholder="Password">
+       <div class="error" id="passwordError"></div>
+       <input type="text" id="phone" placeholder="Phone">
+       <div class="error" id="phoneError"></div>
+       <button type="submit">Submit</button>
+   </form>
+</body>
+</html>
